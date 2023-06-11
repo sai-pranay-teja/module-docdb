@@ -1,5 +1,5 @@
 resource "aws_docdb_cluster" "docdb" {
-  cluster_identifier      = "${var.env}-Roboshop-cluster"
+  cluster_identifier      = "${var.env}-roboshop-cluster"
   engine                  = var.engine
   engine_version = var.engine_version
   /* master_username         = data.aws_ssm_parameter.user.name
@@ -10,7 +10,7 @@ resource "aws_docdb_cluster" "docdb" {
   preferred_backup_window = var.preferred_backup_window
   skip_final_snapshot     = var.skip_final_snapshot
   vpc_security_group_ids = [aws_security_group.docdb-sg.id]
-  kms_key_id = data.aws_kms_key.roboshop-key.id
+  kms_key_id = data.aws_kms_key.roboshop-key.arn
   storage_encrypted = true
   db_subnet_group_name = aws_docdb_subnet_group.docdb-subnet.name
   
