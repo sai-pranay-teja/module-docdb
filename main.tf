@@ -1,9 +1,9 @@
-resource "aws_docdb_cluster" "docdb" {
+/* resource "aws_docdb_cluster" "docdb" {
   cluster_identifier      = "${var.env}-roboshop-cluster"
   engine                  = var.engine
   engine_version = var.engine_version
-  /* master_username         = data.aws_ssm_parameter.user.name
-  master_password         = data.aws_ssm_parameter.pass.name */
+  master_username         = data.aws_ssm_parameter.user.name
+  master_password         = data.aws_ssm_parameter.pass.name
   master_username         = "admin1"
   master_password         = "RoboShop1"
   backup_retention_period = var.backup_retention_period
@@ -49,7 +49,7 @@ resource "aws_security_group" "docdb-sg" {
   tags = {
     Name = "${var.env}-roboshop-docdb-SG"
   }
-}
+} */
 
 resource "aws_docdb_subnet_group" "docdb-subnet" {
   name       = "${var.env}-docdb subnet"
