@@ -52,7 +52,7 @@ resource "aws_security_group" "docdb-sg" {
 }
 
 resource "aws_docdb_subnet_group" "docdb-subnet" {
-  name       = "${var.env}-DocDB subnet"
+  name       = "${var.env}-docdb subnet"
   subnet_ids = var.subnet_ids
 
   tags = {
