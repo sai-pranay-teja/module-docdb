@@ -2,8 +2,8 @@ resource "aws_docdb_cluster" "docdb" {
   cluster_identifier      = "${var.env}-roboshop-cluster"
   engine                  = var.engine
   engine_version = var.engine_version
-  master_username         = data.aws_ssm_parameter.user.name
-  master_password         = data.aws_ssm_parameter.pass.name
+  master_username         = data.aws_ssm_parameter.user.value
+  master_password         = data.aws_ssm_parameter.pass.value
   /* master_username         = "admin1"
   master_password         = "RoboShop1" */
   backup_retention_period = var.backup_retention_period
