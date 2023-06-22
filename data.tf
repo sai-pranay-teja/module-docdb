@@ -3,9 +3,9 @@ data "aws_kms_key" "roboshop-key" {
 }
 
 data "aws_ssm_parameter" "user" {
-  name = "dev.docdb.user"
+  name = "${var.env}.docdb.user"
 }
 
 data "aws_ssm_parameter" "pass" {
-  name = "dev.docdb.pass"
+  name = "${var.env}.docdb.pass"
 }
